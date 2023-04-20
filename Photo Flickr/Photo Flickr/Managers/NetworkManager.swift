@@ -7,11 +7,10 @@
 
 import Foundation
 
-
 final class NetworkManager {
     
     static let shared = NetworkManager()
-        
+    
     private init() {}
     
     func searchPhotos(query: String, completion: @escaping (AllPhotos?, Error?) -> Void) {
@@ -36,11 +35,8 @@ final class NetworkManager {
             }
             
             do {
-                let flickrSearchResponse = try JSONDecoder().decode(AllPhotos.self, from: data)
-//                let searchResults = flickrSearchResponse.photos.photo.map { photo in
-//                    return FlickrSearchResult(imageURL: photo.imageURL, title: photo.title)
-//                }
-                completion(flickrSearchResponse, nil)
+                let result = try JSONDecoder().decode(AllPhotos.self, from: data)
+                completion(result, nil)
             } catch {
                 completion(nil, error)
             }

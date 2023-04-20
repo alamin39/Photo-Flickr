@@ -6,19 +6,18 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DetailsViewController: UIViewController {
 
     @IBOutlet weak var photoView: UIImageView!
-    var data: Data? = nil
+    var imageUrl: URL? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let data = data {
-            DispatchQueue.main.async {
-                self.photoView.image = UIImage(data: data)
-            }
+        title = "Details"
+        if let imageUrl = imageUrl {
+           photoView.kf.setImage(with: imageUrl)
         }
     }
 }
