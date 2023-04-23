@@ -11,6 +11,7 @@ import Kingfisher
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var imageListView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     private let viewModel = ViewModel()
     private let rowHeight = 200
@@ -20,7 +21,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         title = "Photos"
         configureTableView()
-        getAllPhotos(for: "cat")
     }
     
     private func configureTableView() {
@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
     }
     
     private func getAllPhotos(for text: String) {
-        viewModel.searchPhotos(query: text) { [weak self] in
+        viewModel.searchPhotos(for: text) { [weak self] in
             DispatchQueue.main.async {
                 self?.imageListView.reloadData()
             }
@@ -71,5 +71,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             imageViewController.imageUrl = imageURL
             navigationController?.pushViewController(imageViewController, animated: true)
         }
+    }
+}
+
+extension HomeViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        getAllPhotos(for: searchText)
     }
 }

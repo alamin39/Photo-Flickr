@@ -11,12 +11,12 @@ final class ViewModel {
     
     private(set) var allPhotos = [Photo]()
     
-    func searchPhotos(query: String, completion: @escaping() -> Void) {
-        NetworkManager.shared.searchPhotos(query: query) { [weak self] photos, error in
-            guard let photos = photos else {
+    func searchPhotos(for text: String, completion: @escaping() -> Void) {
+        NetworkManager.shared.searchPhotos(query: text) { [weak self] photoList, error in
+            guard let photoList = photoList else {
                 return
             }
-            self?.allPhotos = photos.photos.photo
+            self?.allPhotos = photoList.photos.photo
             DispatchQueue.main.async {
                 completion()
             }
