@@ -17,38 +17,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dyl-gY-kq1">
-                                <rect key="frame" x="0.0" y="159" width="393" height="659"/>
+                                <rect key="frame" x="0.0" y="155" width="393" height="697"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <searchBar contentMode="redraw" placeholder="Search photos" translatesAutoresizingMaskIntoConstraints="NO" id="aKS-36-31A">
-                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Djm-zk-sbW"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aKS-36-31A" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1wO-fL-GHa"/>
-                            <constraint firstItem="dyl-gY-kq1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="6UJ-Li-0Kh"/>
-                            <constraint firstItem="dyl-gY-kq1" firstAttribute="top" secondItem="aKS-36-31A" secondAttribute="bottom" id="BmT-Vy-CAa"/>
+                            <constraint firstItem="dyl-gY-kq1" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="6UJ-Li-0Kh"/>
                             <constraint firstItem="dyl-gY-kq1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PJD-mR-K0B"/>
-                            <constraint firstItem="aKS-36-31A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UNh-M4-hts"/>
-                            <constraint firstItem="aKS-36-31A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mM5-Tv-KLp"/>
                             <constraint firstItem="dyl-gY-kq1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rFb-R0-wta"/>
+                            <constraint firstItem="dyl-gY-kq1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yhy-kb-Uj4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Y9X-7Y-ETt"/>
                     <connections>
                         <outlet property="imageListView" destination="dyl-gY-kq1" id="tOo-zu-luf"/>
-                        <outlet property="searchBar" destination="aKS-36-31A" id="I4I-3o-vB0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -60,8 +44,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XCB-RA-Gyc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="D9I-nx-Sa1">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="D9I-nx-Sa1">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

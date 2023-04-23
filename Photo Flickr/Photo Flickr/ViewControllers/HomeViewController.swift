@@ -11,23 +11,30 @@ import Kingfisher
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var imageListView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
     private let viewModel = ViewModel()
     private let rowHeight = 200
-    private let cellIdentifier = "cell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Photos"
+        addSearchBar()
         configureTableView()
     }
     
     private func configureTableView() {
-        imageListView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        imageListView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: CustomTableViewCell.identifier)
         imageListView.delegate = self
         imageListView.dataSource = self
         imageListView.tableFooterView = UIView()
+    }
+    
+    private func addSearchBar() {
+        let search = UISearchController(searchResultsController: nil)
+        search.searchResultsUpdater = self
+        search.obscuresBackgroundDuringPresentation = false
+        search.searchBar.placeholder = "Search photos"
+        navigationItem.searchController = search
     }
     
     private func getAllPhotos(for text: String) {
@@ -51,7 +58,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell else {
+            return UITableViewCell()
+        }
+        
         let urlString = getImageUrl(for: viewModel.allPhotos[indexPath.row])
         let url = URL(string: urlString)
         cell.photoView.kf.setImage(with: url)
@@ -74,8 +84,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension HomeViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+extension HomeViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text else { return }
         getAllPhotos(for: searchText)
     }
 }

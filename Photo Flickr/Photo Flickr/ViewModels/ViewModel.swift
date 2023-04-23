@@ -14,6 +14,7 @@ final class ViewModel {
     func searchPhotos(for text: String, completion: @escaping() -> Void) {
         NetworkManager.shared.searchPhotos(query: text) { [weak self] photoList, error in
             guard let photoList = photoList else {
+                NSLog(error?.localizedDescription ?? "No photo found")
                 return
             }
             self?.allPhotos = photoList.photos.photo
