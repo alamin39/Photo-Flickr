@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E6173CD29F637520074E09A /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6173CC29F637520074E09A /* ImageView.swift */; };
 		8EAC60F829F04F3C00C3F7AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC60F729F04F3C00C3F7AC /* AppDelegate.swift */; };
 		8EAC60FA29F04F3C00C3F7AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC60F929F04F3C00C3F7AC /* SceneDelegate.swift */; };
 		8EAC60FC29F04F3C00C3F7AC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC60FB29F04F3C00C3F7AC /* HomeViewController.swift */; };
@@ -51,6 +52,7 @@
 		28C416CCC44159074D5E9EB9 /* Pods-Photo Flickr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo Flickr.debug.xcconfig"; path = "Target Support Files/Pods-Photo Flickr/Pods-Photo Flickr.debug.xcconfig"; sourceTree = "<group>"; };
 		5B7048DC24E75F36555E16AF /* Pods-Photo FlickrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo FlickrTests.debug.xcconfig"; path = "Target Support Files/Pods-Photo FlickrTests/Pods-Photo FlickrTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FB2E72B653D486187E0F9AA /* Pods_Photo_Flickr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Photo_Flickr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E6173CC29F637520074E09A /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		8EAC60F429F04F3C00C3F7AC /* Photo Flickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Flickr.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EAC60F729F04F3C00C3F7AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EAC60F929F04F3C00C3F7AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8E6173CB29F637330074E09A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8E6173CC29F637520074E09A /* ImageView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		8EAC60EB29F04F3C00C3F7AC = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +165,7 @@
 		8EAC60F629F04F3C00C3F7AC /* Photo Flickr */ = {
 			isa = PBXGroup;
 			children = (
+				8E6173CB29F637330074E09A /* Extensions */,
 				8EAC613429F05C5F00C3F7AC /* Managers */,
 				8EAC613129F05B7C00C3F7AC /* ViewModels */,
 				8EAC613029F05B4400C3F7AC /* ViewControllers */,
@@ -472,6 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E6173CD29F637520074E09A /* ImageView.swift in Sources */,
 				8EAC60FC29F04F3C00C3F7AC /* HomeViewController.swift in Sources */,
 				8EAC612C29F0555100C3F7AC /* CustomTableViewCell.swift in Sources */,
 				8EAC613B29F12E8B00C3F7AC /* DetailsViewController.swift in Sources */,
@@ -661,6 +673,7 @@
 				DEVELOPMENT_TEAM = 5MR82B22C8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Photo Flickr/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to save";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -690,6 +703,7 @@
 				DEVELOPMENT_TEAM = 5MR82B22C8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Photo Flickr/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to save";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

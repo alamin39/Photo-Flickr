@@ -25,20 +25,37 @@
                         <constraint firstAttribute="height" constant="350" id="wHC-Po-jIg"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeJ-Fu-Zut">
+                    <rect key="frame" x="159.66666666666666" y="611" width="74" height="35.666666666666629"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Share" subtitle="">
+                        <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="shareImageButton:" destination="-1" eventType="touchUpInside" id="o3W-RW-fdr"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="miR-U2-cdD" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="2WJ-zY-AAn"/>
+                <constraint firstItem="KeJ-Fu-Zut" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7kA-Ki-tFX"/>
+                <constraint firstItem="KeJ-Fu-Zut" firstAttribute="top" secondItem="miR-U2-cdD" secondAttribute="bottom" constant="10" id="K5y-OE-afP"/>
                 <constraint firstItem="miR-U2-cdD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LBP-Kg-cSZ"/>
                 <constraint firstItem="miR-U2-cdD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="x06-dD-P03"/>
             </constraints>
-            <point key="canvasLocation" x="131" y="-12"/>
+            <point key="canvasLocation" x="130.53435114503816" y="-12.67605633802817"/>
         </view>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
