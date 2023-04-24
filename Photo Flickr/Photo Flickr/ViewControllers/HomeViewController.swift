@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     
     private let viewModel = ViewModel()
     private let rowHeight = 200
+    private var searchTimer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +87,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
+        searchTimer?.invalidate()
         guard let searchText = searchController.searchBar.text else { return }
-        getAllPhotos(for: searchText)
+        
+        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [weak self] timer in
+            self?.getAllPhotos(for: searchText)
+        }
     }
 }
