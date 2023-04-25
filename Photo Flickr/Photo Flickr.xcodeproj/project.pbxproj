@@ -12,7 +12,6 @@
 		8EAC60FA29F04F3C00C3F7AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC60F929F04F3C00C3F7AC /* SceneDelegate.swift */; };
 		8EAC60FC29F04F3C00C3F7AC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC60FB29F04F3C00C3F7AC /* HomeViewController.swift */; };
 		8EAC60FF29F04F3C00C3F7AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EAC60FD29F04F3C00C3F7AC /* Main.storyboard */; };
-		8EAC610229F04F3D00C3F7AC /* Photo_Flickr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC610029F04F3D00C3F7AC /* Photo_Flickr.xcdatamodeld */; };
 		8EAC610429F04F3E00C3F7AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EAC610329F04F3E00C3F7AC /* Assets.xcassets */; };
 		8EAC610729F04F3E00C3F7AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EAC610529F04F3E00C3F7AC /* LaunchScreen.storyboard */; };
 		8EAC611229F04F3E00C3F7AC /* Photo_FlickrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC611129F04F3E00C3F7AC /* Photo_FlickrTests.swift */; };
@@ -58,7 +57,6 @@
 		8EAC60F929F04F3C00C3F7AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8EAC60FB29F04F3C00C3F7AC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8EAC60FE29F04F3C00C3F7AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8EAC610129F04F3D00C3F7AC /* Photo_Flickr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Photo_Flickr.xcdatamodel; sourceTree = "<group>"; };
 		8EAC610329F04F3E00C3F7AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EAC610629F04F3E00C3F7AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EAC610829F04F3E00C3F7AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -210,7 +208,6 @@
 		8EAC612F29F05B3A00C3F7AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8EAC610029F04F3D00C3F7AC /* Photo_Flickr.xcdatamodeld */,
 				8EAC613729F05D0800C3F7AC /* Model.swift */,
 			);
 			path = Models;
@@ -487,7 +484,6 @@
 				8EAC60FC29F04F3C00C3F7AC /* HomeViewController.swift in Sources */,
 				8EAC612C29F0555100C3F7AC /* CustomTableViewCell.swift in Sources */,
 				8EAC613B29F12E8B00C3F7AC /* DetailsViewController.swift in Sources */,
-				8EAC610229F04F3D00C3F7AC /* Photo_Flickr.xcdatamodeld in Sources */,
 				8EAC613629F05C8500C3F7AC /* NetworkManager.swift in Sources */,
 				8EAC60F829F04F3C00C3F7AC /* AppDelegate.swift in Sources */,
 				8EAC613329F05C2D00C3F7AC /* ViewModel.swift in Sources */,
@@ -842,19 +838,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		8EAC610029F04F3D00C3F7AC /* Photo_Flickr.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				8EAC610129F04F3D00C3F7AC /* Photo_Flickr.xcdatamodel */,
-			);
-			currentVersion = 8EAC610129F04F3D00C3F7AC /* Photo_Flickr.xcdatamodel */;
-			path = Photo_Flickr.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 8EAC60EC29F04F3C00C3F7AC /* Project object */;
 }

@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct AllPhotos: Codable {
     let photos: Photos
 }
@@ -18,5 +17,4 @@ struct Photos: Codable {
 
 struct Photo: Codable {
     let id, owner, secret, server: String
-    let title: String?
 }

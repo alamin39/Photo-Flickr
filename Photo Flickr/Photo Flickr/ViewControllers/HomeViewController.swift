@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
         title = "Photos"
         addSearchBar()
         configureTableView()
+        fetchSearchResult()
     }
     
     private func configureTableView() {
@@ -40,6 +41,7 @@ class HomeViewController: UIViewController {
     
     private func getAllPhotos(for text: String) {
         viewModel.searchPhotos(for: text) { [weak self] in
+            self?.storeSearchResult(for: text)
             DispatchQueue.main.async {
                 self?.imageListView.reloadData()
             }
@@ -50,6 +52,32 @@ class HomeViewController: UIViewController {
         return "https://live.staticflickr.com/\(photo.server)/\(photo.id)_\(photo.secret)_w.jpg"
     }
     
+    private func storeSearchResult(for text: String) {
+        let photoList = viewModel.allPhotos
+        do {
+            let result = try JSONEncoder().encode(photoList)
+            if let key = UserDefaults.standard.value(forKey: "key_val") as? String {
+                UserDefaults.standard.removeObject(forKey: key)
+            }
+            UserDefaults.standard.setValue(result, forKey: text)
+            UserDefaults.standard.setValue(text, forKey: "key_val")
+        } catch {
+            print("Failed to store search result: \(error.localizedDescription)")
+        }
+    }
+    
+    private func fetchSearchResult() {
+        do {
+            if let key = UserDefaults.standard.value(forKey: "key_val") as? String {
+                let data = UserDefaults.standard.value(forKey: key) as! Data
+                let result = try JSONDecoder().decode([Photo].self, from: data)
+                viewModel.allPhotos = result
+                imageListView.reloadData()
+            }
+        } catch {
+            print("Failed to fetch search result: \(error.localizedDescription)")
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {

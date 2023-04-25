@@ -9,7 +9,7 @@ import Foundation
 
 final class ViewModel {
     
-    private(set) var allPhotos = [Photo]()
+    var allPhotos = [Photo]()
     
     func searchPhotos(for text: String, completion: @escaping() -> Void) {
         NetworkManager.shared.searchPhotos(query: text) { [weak self] photoList, error in
