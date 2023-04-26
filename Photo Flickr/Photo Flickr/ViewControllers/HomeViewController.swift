@@ -48,7 +48,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    private func getImageUrl(for photo: Photo) -> String {
+    func getImageUrl(for photo: Photo) -> String {
         return "https://live.staticflickr.com/\(photo.server)/\(photo.id)_\(photo.secret)_w.jpg"
     }
     

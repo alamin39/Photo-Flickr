@@ -17,6 +17,7 @@ final class Photo_FlickrUITests: XCTestCase {
         
         app = XCUIApplication()
         app.launch()
+        app.swipeDown()
         searchField = app.searchFields.firstMatch
     }
     
@@ -42,12 +43,46 @@ final class Photo_FlickrUITests: XCTestCase {
         XCTAssertNotNil(searchField.title)
     }
     
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+    func test_initial_HomeNavigation_Title() {
+        let homeNavigationBar = app.navigationBars["Photos"].title
+        XCTAssert(homeNavigationBar == "")
+    }
+    
+    func test_tableView() {
+        searchField.tap()
+        searchField.typeText("Cat")
+        sleep(10)
+        let initialTableRows = app.tables.children(matching: .cell).count
+        XCTAssert(initialTableRows > 0)
+    }
+    
+    func test_ShareButton_exists() {
+        searchField.tap()
+        searchField.typeText("Cat")
+        sleep(10)
+        let lastRowIndex = app.tables.children(matching: .cell).count - 1
+        app.tables.cells.element(boundBy: lastRowIndex).tap()
+        
+        XCTAssert(app.buttons["Share"].exists)
+    }
+    
+    func test_ShareButton_enabled() {
+        searchField.tap()
+        searchField.typeText("Cat")
+        sleep(10)
+        let lastRowIndex = app.tables.children(matching: .cell).count - 1
+        app.tables.cells.element(boundBy: lastRowIndex).tap()
+        
+        XCTAssert(app.buttons["Share"].isEnabled)
+    }
+    
+    func test_ImageView_exists() {
+        searchField.tap()
+        searchField.typeText("Cat")
+        sleep(10)
+        let lastRowIndex = app.tables.children(matching: .cell).count - 1
+        app.tables.cells.element(boundBy: lastRowIndex).tap()
+        
+        XCTAssert(app.images.firstMatch.exists)
     }
 }
