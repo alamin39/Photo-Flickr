@@ -1,16 +1,32 @@
 # Photo-Flickr
 
-Technology:
+Photo-Flickr application written in Swift. This project searches for images using Flickr API and displays in a list and provides endless scrolling. Also, pressing on a image will take you to details page. You can share, save and zoom in/out images. NetworkManager takes care of fetching data from Flickr service. The application uses MVVM architecture.
 
-Swift, MVVM, Cocoapods, Kingfisher, XCode
+### Technology:
+
+Swift, MVVM, Cocoapods, Kingfisher, Xcode 14.3
 
 
-Features:
-1. Results screen: shows a list of searched pictures based on keywords
-2. Detail screen: shows a selected picture from results screens
+
+### Flickr API:
+
+Images are retrieved by hitting the [Flickr API](https://www.flickr.com/services/api/flickr.photos.search.html).
+
+
+
+### Features:
+1. Home screen: shows a list of searched pictures based on keywords
+2. Details screen: shows a selected picture from results screens
 3. Searches persisted between launches
-4. Unit tests
-5. UI tests
-6. Save picture in Photos
-7. Share picture
-8. Zoom in, zoom out 
+4. Save picture in Photos
+5. Share picture
+6. Zoom in, zoom out 
+7. Unit tests
+8. UI tests
+
+### Decisions 
+
+* Used MVVM for better testability and separation of concern.
+* Used Kingfisher for caching images. So that i don't have to retrieve same images again.
+* Used Timer for debounce. So that it reduce repetitive network calls. 
+* Used UserDefault for persisted between launches. As the app is simple that's why i choose UserDefault instead of CoreData.
